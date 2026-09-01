@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # или 'master', если у вас так называется основная ветка
-  workflow_dispatch: # чтобы можно было запускать вручную
+    branches: ['main']
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -23,27 +23,41 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: "npm"
-
+          node-version: 22
+          cache: 'npm'
+      
       - name: Install dependencies
-        run: npm ci
-
+        run: npm install
+      
       - name: Build
         run: npm run build
-
+      
+      - name: Debug - show dist contents
+        run: |
+          echo "=== Listing dist directory ==="
+          ls -la dist/ || echo "dist folder not found!"
+          echo "=== index.html content ==="
+          cat dist/index.html || echo "index.html not found!"
+      
+      - name: Debug - show current directory
+        run: |
+          echo "=== Current directory ==="
+          pwd
+          echo "=== All files ==="
+          ls -la
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist" # или './build' — смотрите, куда собирает Vite
-
+          path: './dist'
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
