@@ -1,0 +1,20 @@
+$size-2xs: 0.25rem; // 4px
+$size-xs: 0.5rem; // 8px
+$size-sm: 0.75rem; // 12px
+$size-md: 1rem; // 16px
+$size-lg: 1.25rem; // 20px
+$size-xl: 1.5rem; // 24px
+$size-2xl: 2rem; // 32px
+$size-3xl: 2.5rem; // 40px
+$size-4xl: 3rem; // 48px
+
+$space-2xs: 4px;
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-2xl: 48px;
+$space-3xl: 64px;
+
+$container-max-width: calc(1440px + $space-xs * 2); // max-width + padding (x2)

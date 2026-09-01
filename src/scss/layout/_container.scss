@@ -1,0 +1,26 @@
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  //Временное решение
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-neutral-800);
+  }
+}
+
+._container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $space-2xs;
+
+  @include laptop {
+    padding: $space-xs;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+}

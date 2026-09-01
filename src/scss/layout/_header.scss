@@ -1,0 +1,32 @@
+.header {
+  width: 100%;
+  background-color: var(--color-neutral-700);
+  border-radius: $border-radius-md;
+  padding: $space-xs;
+
+  @include mobile-only {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    gap: $space-xs;
+    padding: $space-xs;
+    border-radius: 0;
+  }
+
+  @include mobile {
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    gap: $space-xs;
+  }
+
+  // Временный фон для ПК
+  @include laptop {
+    background-color: var(--color-neutral-700);
+    @include flex-space-between;
+    flex-direction: row;
+  }
+}
