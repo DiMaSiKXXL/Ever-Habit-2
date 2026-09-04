@@ -17,7 +17,7 @@
 .header-btn {
   border: $border-width-medium solid var(--color-neutral-300);
   border-radius: $border-radius-md;
-  @include flex-center;
+  @extend %flex-center;
   aspect-ratio: 1 / 1;
 
   @include mobile-only {
