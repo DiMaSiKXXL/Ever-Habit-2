@@ -1,0 +1,107 @@
+.dialog {
+  border: none;
+  @extend %absolute-center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: $border-radius-sm;
+
+  @include tablet {
+    width: $dialog-container-width;
+    height: min-content;
+  }
+
+  &__wrapper {
+    padding: $space-lg $space-sm $space-sm;
+  }
+
+  &__heading {
+    text-align: center;
+    margin-bottom: $space-md;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+
+    @include mobile {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  .form {
+    &__input {
+      padding: $space-xs;
+      border-radius: $border-radius-sm;
+      font-size: var(--font-size-sm);
+
+      @include mobile-only {
+        font-size: var(--font-size-base);
+        padding: $space-sm;
+      }
+
+      @include mobile {
+        font-size: var(--font-size-base);
+        padding: $space-sm;
+      }
+
+      &::placeholder {
+        color: var(--color-neutral-500);
+      }
+
+      &:focus {
+        outline: $border-width-medium dashed var(--color-green-500);
+        outline-offset: $border-width-medium;
+
+        &:required {
+          &:valid {
+            outline: $border-width-medium solid var(--color-green-500);
+          }
+
+          &:invalid {
+            outline: $border-width-medium dashed var(--color-orange-500);
+          }
+        }
+
+        &:not(:placeholder-shown) {
+          outline: $border-width-medium solid var(--color-green-500);
+        }
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      gap: $space-xs;
+
+      .buttons {
+        &__btn {
+          width: 100%;
+          padding: $space-xs;
+          border-radius: $border-radius-sm;
+          font-size: var(--font-size-sm);
+          font-weight: 700;
+
+          @include mobile-only {
+            font-size: var(--font-size-base);
+            padding: $space-sm;
+          }
+
+          @include mobile {
+            font-size: var(--font-size-base);
+            padding: $space-sm;
+          }
+
+          &_reset,
+          &_submit {
+            &:focus {
+              outline-offset: $border-width-medium;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -32,3 +32,8 @@
     flex-direction: row;
   }
 }
+
+.right-side {
+  @extend %flex-center;
+  gap: 8px;
+}

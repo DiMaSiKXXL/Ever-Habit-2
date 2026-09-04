@@ -1,5 +1,45 @@
 html.light-theme {
   .wrapper {
     background-color: var(--color-neutral-50);
+    color: var(--color-neutral-900);
+  }
+
+  .dialog {
+    background: var(--color-neutral-50);
+    color: var(--color-neutral-800);
+
+    &__heading {
+      color: var(--color-neutral-800);
+    }
+  }
+
+  .form {
+    &__input {
+      background: var(--color-neutral-300);
+
+      &::placeholder {
+        color: var(--color-neutral-500);
+      }
+    }
+  }
+
+  .buttons {
+    &__btn {
+      &_reset,
+      &_submit {
+        background: var(--color-neutral-400);
+        color: var(--color-neutral-800);
+
+        &:focus,
+        &:hover {
+          background: var(--color-neutral-500);
+          color: var(--color-neutral-900);
+        }
+
+        &:focus {
+          outline: $border-width-medium solid var(--color-neutral-600);
+        }
+      }
+    }
   }
 }

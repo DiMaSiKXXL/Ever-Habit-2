@@ -36,6 +36,10 @@ body {
   height: 100%;
   line-height: 1;
   font-family: Arial; // Добавить шрифт
+
+  &:has(dialog[open]) {
+    overflow: hidden;
+  }
 }
 
 textarea,

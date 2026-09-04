@@ -15,6 +15,7 @@
               type="button"
               class="btn header-btn"
               title="Открыть меню настроек"
+              id="settings-btn"
             >
               <svg class="btn__svg">
                 <use href="./src/assets/sprites/sprite.svg#gear"></use>
@@ -22,6 +23,16 @@
             </button>
           </div>
           <div class="right-side">
+            <button
+              type="button"
+              class="btn header-btn"
+              title="Создать привычку"
+              id="create-habit-btn"
+            >
+              <svg class="btn__svg">
+                <use href="./src/assets/sprites/sprite.svg#plus"></use>
+              </svg>
+            </button>
             <button
               type="button"
               class="btn header-btn"
@@ -35,6 +46,39 @@
           </div>
         </header>
       </div>
+
+      <dialog class="dialog" aria-label="Создать привычку" id="create-habit-dialog">
+        <div class="dialog__wrapper">
+          <h2 class="dialog__heading">Создать привычку</h2>
+          <form class="dialog__form form" method="dialog" id="createhabit-form" autocomplete="off">
+            <input
+              class="form__input"
+              id="habit-name-input"
+              type="text"
+              placeholder="Название привычки"
+              required
+            />
+            <input
+              class="form__input"
+              id="habit-description-input"
+              type="text"
+              placeholder="Описание"
+            />
+            <div class="form__buttons buttons">
+              <button
+                class="buttons__btn buttons__btn_reset"
+                type="button"
+                id="cancel-create-habit-btn"
+              >Отменить</button>
+              <button
+                class="buttons__btn buttons__btn_submit"
+                type="submit"
+                id="submit-create-habit-btn"
+              >Создать</button>
+            </div>
+          </form>
+        </div>
+      </dialog>
     </div>
     <script type="module" src="/src/js/main.js"></script>
   </body>
